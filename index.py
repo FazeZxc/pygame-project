@@ -3,6 +3,7 @@ pygame.init()
 
 winWidth = 852
 winHeight = 480
+a = 10
 
 win = pygame.display.set_mode((winWidth, winHeight))
 pygame.display.set_caption("game")

@@ -1,12 +1,35 @@
 import pygame
 pygame.init()
 
-winWidth = 852
-winHeight = 480
-a = 10
+winWidth = 840
+winHeight = 480               
 
 win = pygame.display.set_mode((winWidth, winHeight))
 pygame.display.set_caption("game")
+
+#load button images
+start_image = pygame.image.load('assets/start_btn.png').convert()
+exit_image = pygame.image.load('assets/exit_btn.png').convert()
+
+#Button Class
+class Button():
+    def __init__(self,x,y,image):
+        self.image = image
+        self.rect = self.image.get_rect()
+        self.rect.topleft = (x,y)
+        
+    def draw(self):
+        #draw button on screen
+        win.blit(self.image,(self.rect.x,self.rect.y))  
+        
+#create button instances
+start_button = Button(100,200,start_image)    
+exit_button = Button(450,200,exit_image)     
+
+win.fill((202,228,241))
+
+#Game Music
+game_sfx = pygame.mixer.Sound("assets/music.mp3")
 
 walkRight = [pygame.image.load('assets/R1.png'), pygame.image.load('assets/R2.png'), pygame.image.load('assets/R3.png'), pygame.image.load('assets/R4.png'), pygame.image.load('assets/R5.png'), pygame.image.load('assets/R6.png'), pygame.image.load('assets/R7.png'), pygame.image.load('assets/R8.png'), pygame.image.load('assets/R9.png')]
 walkLeft = [pygame.image.load('assets/L1.png'), pygame.image.load('assets/L2.png'), pygame.image.load('assets/L3.png'), pygame.image.load('assets/L4.png'), pygame.image.load('assets/L5.png'), pygame.image.load('assets/L6.png'), pygame.image.load('assets/L7.png'), pygame.image.load('assets/L8.png'), pygame.image.load('assets/L9.png')]

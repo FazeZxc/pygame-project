@@ -1,8 +1,9 @@
 import pygame
+import math
 pygame.init()
 
-winWidth = 840
-winHeight = 480               
+winWidth = 840;
+winHeight = 480;               
 
 win = pygame.display.set_mode((winWidth, winHeight))
 pygame.display.set_caption("game")
